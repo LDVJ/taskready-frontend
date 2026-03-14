@@ -118,29 +118,36 @@ export default function SignupPage() {
             </div>
 
             {/* Role selector */}
-            <div className="flex flex-col gap-1.5">
-              <label className="text-sm font-medium text-brand-navy">
-                I am a…
-              </label>
-              <div className="grid grid-cols-3 gap-2">
-                {(["user", "tasker", "member"] as const).map((r) => (
-                  <label key={r} className="relative cursor-pointer">
-                    <input
-                      type="radio"
-                      value={r}
-                      className="peer sr-only"
-                      {...register("role")}
-                    />
-                    <div className="text-center py-2.5 px-2 rounded-xl border-2 text-sm font-semibold capitalize transition-all border-gray-200 text-gray-500 peer-checked:border-brand-orange peer-checked:bg-brand-orange/5 peer-checked:text-brand-orange hover:border-brand-orange/50">
-                      {r}
-                    </div>
+                <div className="flex flex-col gap-1.5">
+                  <label className="text-sm font-medium text-brand-navy">
+                    I am a…
                   </label>
-                ))}
-              </div>
-              {errors.role && (
-                <p className="text-xs text-red-500">{errors.role.message}</p>
-              )}
-            </div>
+                  <div className="grid grid-cols-3 gap-2">
+                    {(["user", "tasker", "member"] as const).map((r) => (
+                      <label key={r} className="relative cursor-pointer">
+                        <input
+                          type="radio"
+                          value={r}
+                          className="peer sr-only"
+                          {...register("role")}
+                        />
+                        <div className="
+                          text-center py-2.5 px-2 rounded-xl border-2 text-sm font-semibold capitalize
+                          transition-all duration-150 select-none
+                          border-gray-200 text-gray-500 bg-white
+                          peer-checked:border-brand-orange peer-checked:bg-orange-50 peer-checked:text-brand-orange
+                          hover:border-orange-300 hover:text-brand-orange
+                        ">
+                          {r}
+                        </div>
+                      </label>
+                    ))}
+                  </div>
+                  {errors.role && (
+                    <p className="text-xs text-red-500">{errors.role.message}</p>
+                  )}
+                </div>
+
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Input
