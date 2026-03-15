@@ -26,11 +26,16 @@ const Button = forwardRef<HTMLButtonElement, Props>(
 
     // Style variants
     const variants = {
-      primary: "bg-brand-orange text-white hover:bg-orange-600 active:scale-[0.98] shadow-sm",
-      outline: "border-2 border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-white",
-      ghost: "text-brand-navy hover:bg-brand-navy/10",
-      danger: "bg-red-500 text-white hover:bg-red-600",
+    primary:
+      "bg-white text-[hsl(32,100%,60%)] border-2 border-[hsl(32,100%,60%)] hover:bg-[hsl(32,100%,60%)] hover:text-white active:scale-[0.98] shadow-sm",
+    outline:
+      "border-2 border-[hsl(32,100%,60%)] text-[hsl(32,100%,60%)] bg-white hover:bg-[hsl(32,100%,60%)] hover:text-white",
+    ghost:
+      "text-brand-navy hover:bg-brand-navy/10 border-2 border-transparent",
+    danger:
+      "bg-red-500 text-white border-2 border-red-500 hover:bg-white hover:text-red-500",
     };
+
 
     // Size variants
     const sizes = {
